@@ -7,19 +7,25 @@
   <body>
     <label for="Timer">Timer(원하시는 시간을 적어주세요.)</label><br>
 
-    <input type="text" id="Timer" name="Timer" required
+    <input type="text" id="Timer" name="Timer" value="" required
     minlength="5" maxlength="10" size="12"  oninput="myFunction()">
 
     <input type="button" id="confirmation" value="확인" onclick="">
 
     <script>
-      function myFunction(){
-        setInterval();
+    const Timer=document.getElementById('Timer');
+    let sec=60;
+
+    if(sec>0){
+      sec=sec-1;
+         Timer.value=Math.floor(min)+':'+sec;
 
       }
+    function myFunction(){
+
+    }
+
 
     </script>
-
-
   </body>
 </html>

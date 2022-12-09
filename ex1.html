@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const Timer=document.getElementById('Timer');
+      let time= 180000;
+      let min=3;
+      let sec=60;
+
+
+      Timer.value=min+":"+'00';
+
+      function TIMER(){
+          PlAYTIME=setInterval(function(){
+              time=time-1000;
+              min=time/(60*1000);
+
+             if(sec>0){
+                  sec=sec-1;
+                  Timer.value=Math.floor(min)+':'+sec;
+
+              }
+              if(sec===0){
+
+
+                  sec=60;
+                  Timer.value=Math.floor(min)+':'+'00'
+              }
+
+          },1000);
+      }
+
+
+      TIMER();
+      setTimeout(function(){
+          clearInterval(PlAYTIME);
+      },180000);
+    </script>
+  </body>
+</html>
